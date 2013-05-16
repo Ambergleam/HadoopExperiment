@@ -1,0 +1,48 @@
+<!-- Ant build configuration -->
+<project name="HadoopExperiment" default="dist" basedir=".">
+	<description>HadoopExperiment build file</description>
+
+	<!-- Set global properties for this build -->
+	<property name="src" location="src/wordcount" /> <!-- EDIT TODO  -->
+	<property name="build" location="build" />
+	<property name="dist" location="dist" />
+
+	<!-- Initializes the build -->
+	<target name="init">
+		<!-- Create the time stamp -->
+		<tstamp />
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${dist}" />
+		<mkdir dir="${build}" />
+	</target>
+
+	<!-- Compiles the build -->
+	<target name="compile" depends="init" description="Compiles the source">
+		<javac srcdir="${src}" destdir="${build}">
+			<classpath>
+				<pathelement path="${classpath}" />
+				<fileset dir="lib">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+
+	<!-- Packages everything from the build into the distribution -->
+	<target name="dist" depends="compile" description="Generates the distribution">
+		<!-- Put everything in ${build}/lib into the lib/ directory of build -->
+		<copy todir="${build}/lib">
+			<fileset dir="lib" includes="*.jar" />
+		</copy>
+		<jar jarfile="${dist}/HelloWorld.jar" basedir="${build}" />
+		<!-- Deletes the ${build} directory tree -->
+		<delete dir="${build}" />
+	</target>
+
+	<!-- Cleans the build -->
+	<target name="clean" description="Cleans up everything">
+		<!-- Delete the ${dist} directory tree -->
+		<delete dir="${dist}" />
+	</target>
+
+</project>
