@@ -34,7 +34,7 @@
 		<copy todir="${build}/lib">
 			<fileset dir="lib" includes="*.jar" />
 		</copy>
-		<jar jarfile="${dist}/HelloWorld.jar" basedir="${build}" />
+		<jar jarfile="${dist}/HadoopExperiment.jar" basedir="${build}" />
 		<!-- Deletes the ${build} directory tree -->
 		<delete dir="${build}" />
 	</target>
