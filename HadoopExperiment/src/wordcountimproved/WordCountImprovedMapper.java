@@ -1,4 +1,4 @@
-package wordcount;
+package wordcountimproved;
 
 import java.io.IOException;
 import java.util.StringTokenizer;
@@ -10,7 +10,7 @@ import org.apache.hadoop.mapred.*;
  * The Mapper for the Hadoop job
  * The Mapper params are <Mapper Key, Mapper Value, Reducer Key, Reducer Value>
  */
-public class WordCountMapper extends MapReduceBase implements Mapper<LongWritable, Text, Text, IntWritable> {
+public class WordCountImprovedMapper extends MapReduceBase implements Mapper<LongWritable, Text, Text, IntWritable> {
 
 	// Hadoop supported data types
 	private final static IntWritable one = new IntWritable(1);

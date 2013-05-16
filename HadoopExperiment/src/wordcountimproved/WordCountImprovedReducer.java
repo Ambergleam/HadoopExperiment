@@ -1,4 +1,4 @@
-package wordcount;
+package wordcountimproved;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -11,7 +11,7 @@ import org.apache.hadoop.mapred.*;
  * The Reducer for the Hadoop job
  * The Reducer params are <Mapper Key, Mapper Value, Reducer Key, Reducer Value>
  */
-public class WordCountReducer extends MapReduceBase implements Reducer<Text, IntWritable, Text, IntWritable> {
+public class WordCountImprovedReducer extends MapReduceBase implements Reducer<Text, IntWritable, Text, IntWritable> {
 	
 	/**
 	 * Reduce method accepts the Key Value pairs from the Mapper
