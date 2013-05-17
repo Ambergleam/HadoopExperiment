@@ -25,6 +25,17 @@ public class WordCountImproved extends Configured implements Tool {
 	 */
 	public int run(String[] args) throws Exception {
 
+		// Parameter checking
+		if (args.length < 2) {
+			// Not enough parameters
+			System.out.println("Error - Not enough parameters");
+			System.exit(0);
+		} else if (args.length > 2) {
+			// Too many parameters
+			System.out.println("Error - Too many parameters");
+			System.exit(0);
+		}
+		
 		// Creating a JobConf object and assigning a job name for identification purposes
 		JobConf conf = new JobConf(getConf(), WordCountImproved.class);
 		conf.setJobName("WordCountImproved");
