@@ -29,7 +29,7 @@ public class WordCountImprovedMapper extends MapReduceBase implements Mapper<Lon
 		String line = value.toString();
 
 		// The regex to split the line on
-		String regex = "^[a-zA-Z]";
+		String regex = "[^a-zA-Z]";
 		String[] pieces = line.split(regex);
 
 		// Iterating through all the words available in that line and forming the key value pair

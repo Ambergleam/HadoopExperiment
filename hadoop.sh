@@ -18,9 +18,9 @@ then
 	exit 0
 fi
 
-# The selected utility's class and package (Equivalent, but the package is lower case)
+# The selected utility's class and package (Equivalent)
 CLASS=$1
-PACKAGE=$(echo $1 | tr "[A-Z]" "[a-z]")
+PACKAGE=$1
 # The path to the package inside the jar
 PACKAGE_PATH="${PACKAGE}.${CLASS}"
 echo "Running the ${CLASS} utility."
